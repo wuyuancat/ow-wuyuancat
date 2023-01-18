@@ -1,0 +1,23 @@
+services:
+  web:
+    restart: always
+    build:
+      context: ./api                  # 指定dockerfile文件的所在路径  
+      dockerfile: Dockerfile    # 指定Dockerfile文件名称 
+    image: api:t1          #自定义镜像名和版本号
+    container_name: api
+    ports:
+      - 8080:8080
+    links:
+      - "api:api"
+  api:
+    restart: always
+    build:
+      context: ./web                  # 指定dockerfile文件的所在路径  
+      dockerfile: Dockerfile    # 指定Dockerfile文件名称 
+    image: web:t1          #自定义镜像名和版本号
+    container_name: web
+    ports:
+      - 80:80
+    labels:
+      dev.okteto.com/auto-ingress: "ourworld.wuyuan.gq"
