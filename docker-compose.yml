@@ -1,5 +1,5 @@
 services:
-  web:
+  api:
     restart: always
     build:
       context: ./api                  # 指定dockerfile文件的所在路径  
@@ -10,7 +10,7 @@ services:
       - 8080:8080
     links:
       - "api:api"
-  api:
+  web:
     restart: always
     build:
       context: ./web                  # 指定dockerfile文件的所在路径  
