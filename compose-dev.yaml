@@ -21,4 +21,4 @@ services:
     labels:
       dev.okteto.com/auto-ingress: "ourworld.wuyuan.gq"
     links:
-      - "api:weba"
+      - "web:weba"
