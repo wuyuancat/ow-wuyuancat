@@ -33,4 +33,4 @@ justauth:
     prefix: 'demo::'
     timeout: 1h
 # 用户体验提升计划
-ueip: true
+ueip: false
